@@ -52,4 +52,8 @@
         }];
     }
 }
+
+- (IBAction)dismissButton:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES]; //displaying login screen 
+}
 @end

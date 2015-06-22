@@ -14,6 +14,22 @@
 		D602E7381B35F37100392ED0 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D602E7321B35F37100392ED0 /* ParseFacebookUtilsV4.framework */; };
 		D602E7391B35F37100392ED0 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D602E7331B35F37100392ED0 /* ParseUI.framework */; };
 		D602E73C1B366BB300392ED0 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D602E73B1B366BB300392ED0 /* MessageViewController.m */; };
+		D602E7671B37978C00392ED0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D602E7591B37978C00392ED0 /* Default-568h@2x.png */; };
+		D602E7681B37978C00392ED0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D602E75A1B37978C00392ED0 /* Default.png */; };
+		D602E7691B37978C00392ED0 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D602E75B1B37978C00392ED0 /* Default@2x.png */; };
+		D602E76A1B37978C00392ED0 /* Icon_29.png in Resources */ = {isa = PBXBuildFile; fileRef = D602E75C1B37978C00392ED0 /* Icon_29.png */; };
+		D602E76B1B37978C00392ED0 /* Icon_58.png in Resources */ = {isa = PBXBuildFile; fileRef = D602E75D1B37978C00392ED0 /* Icon_58.png */; };
+		D602E76C1B37978C00392ED0 /* Icon_80.png in Resources */ = {isa = PBXBuildFile; fileRef = D602E75E1B37978C00392ED0 /* Icon_80.png */; };
+		D602E76D1B37978C00392ED0 /* Icon_120.png in Resources */ = {isa = PBXBuildFile; fileRef = D602E75F1B37978C00392ED0 /* Icon_120.png */; };
+		D602E76E1B37978C00392ED0 /* icon_x.png in Resources */ = {isa = PBXBuildFile; fileRef = D602E7601B37978C00392ED0 /* icon_x.png */; };
+		D602E76F1B37978C00392ED0 /* icon_x@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D602E7611B37978C00392ED0 /* icon_x@2x.png */; };
+		D602E7701B37978C00392ED0 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D602E7621B37978C00392ED0 /* Icon.png */; };
+		D602E7711B37978C00392ED0 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D602E7631B37978C00392ED0 /* Icon@2x.png */; };
+		D602E7721B37978C00392ED0 /* loginBackground-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D602E7641B37978C00392ED0 /* loginBackground-568h@2x.png */; };
+		D602E7731B37978C00392ED0 /* loginBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = D602E7651B37978C00392ED0 /* loginBackground.png */; };
+		D602E7741B37978C00392ED0 /* loginBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D602E7661B37978C00392ED0 /* loginBackground@2x.png */; };
+		D602E7771B379F5900392ED0 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D602E7761B379F5900392ED0 /* Images-2.xcassets */; };
+		D602E7791B37A9B400392ED0 /* yik yak image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D602E7781B37A9B400392ED0 /* yik yak image.jpg */; };
 		D65445C41B34E893004C05BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D65445C31B34E893004C05BE /* main.m */; };
 		D65445C71B34E893004C05BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D65445C61B34E893004C05BE /* AppDelegate.m */; };
 		D65445CD1B34E893004C05BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D65445CB1B34E893004C05BE /* Main.storyboard */; };
@@ -121,6 +137,22 @@
 		D602E7331B35F37100392ED0 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		D602E73A1B366BB300392ED0 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		D602E73B1B366BB300392ED0 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		D602E7591B37978C00392ED0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Images/Default-568h@2x.png"; sourceTree = "<group>"; };
+		D602E75A1B37978C00392ED0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Images/Default.png; sourceTree = "<group>"; };
+		D602E75B1B37978C00392ED0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Images/Default@2x.png"; sourceTree = "<group>"; };
+		D602E75C1B37978C00392ED0 /* Icon_29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon_29.png; path = Images/Icon_29.png; sourceTree = "<group>"; };
+		D602E75D1B37978C00392ED0 /* Icon_58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon_58.png; path = Images/Icon_58.png; sourceTree = "<group>"; };
+		D602E75E1B37978C00392ED0 /* Icon_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon_80.png; path = Images/Icon_80.png; sourceTree = "<group>"; };
+		D602E75F1B37978C00392ED0 /* Icon_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon_120.png; path = Images/Icon_120.png; sourceTree = "<group>"; };
+		D602E7601B37978C00392ED0 /* icon_x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_x.png; path = Images/icon_x.png; sourceTree = "<group>"; };
+		D602E7611B37978C00392ED0 /* icon_x@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_x@2x.png"; path = "Images/icon_x@2x.png"; sourceTree = "<group>"; };
+		D602E7621B37978C00392ED0 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Images/Icon.png; sourceTree = "<group>"; };
+		D602E7631B37978C00392ED0 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Images/Icon@2x.png"; sourceTree = "<group>"; };
+		D602E7641B37978C00392ED0 /* loginBackground-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "loginBackground-568h@2x.png"; path = "Images/loginBackground-568h@2x.png"; sourceTree = "<group>"; };
+		D602E7651B37978C00392ED0 /* loginBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loginBackground.png; path = Images/loginBackground.png; sourceTree = "<group>"; };
+		D602E7661B37978C00392ED0 /* loginBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "loginBackground@2x.png"; path = "Images/loginBackground@2x.png"; sourceTree = "<group>"; };
+		D602E7761B379F5900392ED0 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
+		D602E7781B37A9B400392ED0 /* yik yak image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "yik yak image.jpg"; path = "AFourYearOldsYikYak/yik yak image.jpg"; sourceTree = "<group>"; };
 		D65445BE1B34E893004C05BE /* AFourYearOldsYikYak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFourYearOldsYikYak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D65445C21B34E893004C05BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D65445C31B34E893004C05BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -281,10 +313,32 @@
 			path = "parse-library-1.7.4 2";
 			sourceTree = "<group>";
 		};
+		D602E7751B379F2400392ED0 /* fancyImages */ = {
+			isa = PBXGroup;
+			children = (
+				D602E7591B37978C00392ED0 /* Default-568h@2x.png */,
+				D602E75A1B37978C00392ED0 /* Default.png */,
+				D602E75B1B37978C00392ED0 /* Default@2x.png */,
+				D602E7601B37978C00392ED0 /* icon_x.png */,
+				D602E7611B37978C00392ED0 /* icon_x@2x.png */,
+				D602E7621B37978C00392ED0 /* Icon.png */,
+				D602E7631B37978C00392ED0 /* Icon@2x.png */,
+				D602E7641B37978C00392ED0 /* loginBackground-568h@2x.png */,
+				D602E7651B37978C00392ED0 /* loginBackground.png */,
+				D602E7661B37978C00392ED0 /* loginBackground@2x.png */,
+				D602E75C1B37978C00392ED0 /* Icon_29.png */,
+				D602E75D1B37978C00392ED0 /* Icon_58.png */,
+				D602E75E1B37978C00392ED0 /* Icon_80.png */,
+				D602E75F1B37978C00392ED0 /* Icon_120.png */,
+			);
+			name = fancyImages;
+			sourceTree = "<group>";
+		};
 		D65445B51B34E893004C05BE = {
 			isa = PBXGroup;
 			children = (
 				D6FCBA2C1B34FE5900E0E4A4 /* libsqlite3.dylib */,
+				D602E7751B379F2400392ED0 /* fancyImages */,
 				D654464B1B34EBA2004C05BE /* images */,
 				D65445C01B34E893004C05BE /* AFourYearOldsYikYak */,
 				D65445DA1B34E894004C05BE /* AFourYearOldsYikYakTests */,
@@ -323,6 +377,7 @@
 				D654464D1B34F2A6004C05BE /* HomeTableViewController.m */,
 				D65445CE1B34E893004C05BE /* Images.xcassets */,
 				D65445D01B34E893004C05BE /* LaunchScreen.xib */,
+				D602E7761B379F5900392ED0 /* Images-2.xcassets */,
 				D65445C11B34E893004C05BE /* Supporting Files */,
 			);
 			path = AFourYearOldsYikYak;
@@ -407,6 +462,7 @@
 				D65446181B34EB96004C05BE /* sample-1240-group-error@2x.png */,
 				D65446141B34EB96004C05BE /* sample-1111-flick-left@2x.png */,
 				D65446151B34EB96004C05BE /* sample-1116-slayer-hand@2x.png */,
+				D602E7781B37A9B400392ED0 /* yik yak image.jpg */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -535,12 +591,14 @@
 				D65446241B34EB96004C05BE /* sample-379-barbell.png in Resources */,
 				D654461C1B34EB96004C05BE /* sample-04-squiggle.png in Resources */,
 				D654461A1B34EB96004C05BE /* sample-02-redo.png in Resources */,
+				D602E76E1B37978C00392ED0 /* icon_x.png in Resources */,
 				D654463F1B34EB96004C05BE /* sample-1040-checkmark@2x.png in Resources */,
 				D65446381B34EB96004C05BE /* sample-920-handbag@2x.png in Resources */,
 				D654461F1B34EB96004C05BE /* sample-305-palm-tree.png in Resources */,
 				D65446191B34EB96004C05BE /* sample-01-refresh.png in Resources */,
 				D654463A1B34EB96004C05BE /* sample-976-bow-and-arrow@2x.png in Resources */,
 				D65446341B34EB96004C05BE /* sample-881-globe@2x.png in Resources */,
+				D602E7671B37978C00392ED0 /* Default-568h@2x.png in Resources */,
 				D654462D1B34EB96004C05BE /* sample-776-recycle@2x.png in Resources */,
 				D65445CD1B34E893004C05BE /* Main.storyboard in Resources */,
 				D65446311B34EB96004C05BE /* sample-844-trumpet@2x.png in Resources */,
@@ -552,6 +610,7 @@
 				D65445D21B34E893004C05BE /* LaunchScreen.xib in Resources */,
 				D65446391B34EB96004C05BE /* sample-935-power-socket@2x.png in Resources */,
 				D65446351B34EB96004C05BE /* sample-886-ice-cream-cone@2x.png in Resources */,
+				D602E76F1B37978C00392ED0 /* icon_x@2x.png in Resources */,
 				D65446301B34EB96004C05BE /* sample-834-bolt@2x.png in Resources */,
 				D65446271B34EB96004C05BE /* sample-405-test-tube.png in Resources */,
 				D654462C1B34EB96004C05BE /* sample-603-anchor.png in Resources */,
@@ -559,23 +618,34 @@
 				D65446361B34EB96004C05BE /* sample-894-t-shirt@2x.png in Resources */,
 				D654461D1B34EB96004C05BE /* sample-05-shuffle.png in Resources */,
 				D65446451B34EB96004C05BE /* sample-1093-lightning-bolt-2@2x.png in Resources */,
+				D602E76D1B37978C00392ED0 /* Icon_120.png in Resources */,
 				D65446431B34EB96004C05BE /* sample-1079-fork-path@2x.png in Resources */,
 				D654462A1B34EB96004C05BE /* sample-552-flag-1.png in Resources */,
 				D654461E1B34EB96004C05BE /* sample-302-swords.png in Resources */,
+				D602E76A1B37978C00392ED0 /* Icon_29.png in Resources */,
 				D65446471B34EB96004C05BE /* sample-1116-slayer-hand@2x.png in Resources */,
 				D65446231B34EB96004C05BE /* sample-335-magic-wand.png in Resources */,
 				D65446461B34EB96004C05BE /* sample-1111-flick-left@2x.png in Resources */,
 				D65446281B34EB96004C05BE /* sample-504-doghouse.png in Resources */,
 				D65446371B34EB96004C05BE /* sample-908-target@2x.png in Resources */,
+				D602E76B1B37978C00392ED0 /* Icon_58.png in Resources */,
 				D65446421B34EB96004C05BE /* sample-1067-enter-fullscreen@2x.png in Resources */,
+				D602E76C1B37978C00392ED0 /* Icon_80.png in Resources */,
+				D602E7791B37A9B400392ED0 /* yik yak image.jpg in Resources */,
+				D602E7741B37978C00392ED0 /* loginBackground@2x.png in Resources */,
 				D654463D1B34EB96004C05BE /* sample-1012-sticky-note@2x.png in Resources */,
+				D602E7691B37978C00392ED0 /* Default@2x.png in Resources */,
 				D654462B1B34EB96004C05BE /* sample-583-broadcast.png in Resources */,
 				D654463B1B34EB96004C05BE /* sample-986-ghost@2x.png in Resources */,
+				D602E7711B37978C00392ED0 /* Icon@2x.png in Resources */,
+				D602E7721B37978C00392ED0 /* loginBackground-568h@2x.png in Resources */,
+				D602E7731B37978C00392ED0 /* loginBackground.png in Resources */,
 				D654463E1B34EB96004C05BE /* sample-1013-hammer@2x.png in Resources */,
 				D65446331B34EB96004C05BE /* sample-855-door@2x.png in Resources */,
 				D65446491B34EB96004C05BE /* sample-1189-snake@2x.png in Resources */,
 				D65446211B34EB96004C05BE /* sample-316-truck.png in Resources */,
 				D65446411B34EB96004C05BE /* sample-1055-ticket@2x.png in Resources */,
+				D602E7701B37978C00392ED0 /* Icon.png in Resources */,
 				D65446251B34EB96004C05BE /* sample-394-bank.png in Resources */,
 				D654462E1B34EB96004C05BE /* sample-820-bathtub@2x.png in Resources */,
 				D654462F1B34EB96004C05BE /* sample-821-stamp@2x.png in Resources */,
@@ -583,6 +653,8 @@
 				D65445CF1B34E893004C05BE /* Images.xcassets in Resources */,
 				D65446441B34EB96004C05BE /* sample-1082-merge@2x.png in Resources */,
 				D654463C1B34EB96004C05BE /* sample-1004-voicemail@2x.png in Resources */,
+				D602E7771B379F5900392ED0 /* Images-2.xcassets in Resources */,
+				D602E7681B37978C00392ED0 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,7 +804,6 @@
 		D65445E21B34E894004C05BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-library-1.7.4",
@@ -752,7 +823,6 @@
 		D65445E31B34E894004C05BE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-library-1.7.4",

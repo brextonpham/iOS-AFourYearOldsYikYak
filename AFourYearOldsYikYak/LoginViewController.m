@@ -17,9 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
-    //hides back button on login screen
-    self.navigationItem.hidesBackButton = YES;
+    [self.navigationController.navigationBar setHidden:YES]; //hides navigation bar
 }
 
 - (IBAction)login:(id)sender {
