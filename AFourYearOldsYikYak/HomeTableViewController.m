@@ -21,6 +21,8 @@
     
     //check to see if user is logged in already
     PFUser *currentUser = [PFUser currentUser];
+    NSLog(@"%@",[[PFUser currentUser] objectId]);
+    
     if (currentUser) {
         NSLog(@"Current user: %@", currentUser.username);
     } else {
@@ -38,7 +40,16 @@
     
     [self.navigationController.navigationBar setHidden:NO]; //show navigation bar
     
-    [self retrieveMessages];
+    PFUser *currentUser = [PFUser currentUser];
+    if (currentUser) {
+        NSLog(@"Current user: %@", currentUser.username);
+    } else {
+        //initial segue is to login screen at launch
+        [self retrieveMessages];
+    }
+
+    
+    
 }
 
 #pragma mark - Table view data source
@@ -91,20 +102,25 @@
 - (void)retrieveMessages {
     /* Retrieving all messages */
     PFQuery *query = [PFQuery queryWithClassName:@"Messages"];
-    [query whereKey:@"recipientIds" equalTo:[[PFUser currentUser] objectId]];
-    [query orderByDescending:@"createdAt"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (error) {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        } else {
-            self.messages = objects;
-            [self.tableView reloadData];
-            NSLog(@"Retrieved %d messages", [self.messages count]);
-        }
+    if ([[PFUser currentUser] objectId] == nil) {
+        NSLog(@"No objectID");
+    } else {
+        NSLog(@"%@",[[PFUser currentUser] objectId]);
+        [query whereKey:@"recipientIds" equalTo:[[PFUser currentUser] objectId]];
+        [query orderByDescending:@"createdAt"];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (error) {
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            } else {
+                self.messages = objects;
+                [self.tableView reloadData];
+                NSLog(@"Retrieved %d messages", [self.messages count]);
+            }
         
-        if ([self.refreshControl isRefreshing]) { //ENDS REFRESHING
+            if ([self.refreshControl isRefreshing]) { //ENDS REFRESHING
             [self.refreshControl endRefreshing];
-        }
-    }];
+            }
+        }];
+    }
 }
 @end
