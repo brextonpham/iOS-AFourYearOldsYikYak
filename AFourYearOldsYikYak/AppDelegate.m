@@ -22,6 +22,8 @@
     [Parse setApplicationId:@"OVKp5NmMjIXJd6XqOSIwxbZzktT2GfikVfoz7IuL"
                   clientKey:@"t0W3Llo02jwLVjSoH6nWX1mlpC2r9Ii9gKVZ66iJ"];
     
+    [self customizeUserInterface];
+    
     return YES;
 }
 
@@ -45,6 +47,30 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)customizeUserInterface {
+    //Customize nav bar
+    //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navBarBackground"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.373 green:0.855 blue:0.71 alpha:1]];
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, nil]]; //makes title buttons white
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    //Customize tab bar
+    /*
+     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, nil] forState:UIControlStateNormal];
+     
+     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+     UITabBar *tabBar = tabBarController.tabBar;
+     
+     UITabBarItem *tabInbox = [tabBar.items objectAtIndex:0];
+     UITabBarItem *tabFriends = [tabBar.items objectAtIndex:1];
+     UITabBarItem *tabCamera = [tabBar.items objectAtIndex:2];
+     
+     [tabInbox setFinishedSelectedImage:[UIImage imageNamed:@"inbox"] withFinishedUnselectedImage:[UIImage imageNamed:@"inbox"]];
+     [tabFriends setFinishedSelectedImage:[UIImage imageNamed:@"friends"] withFinishedUnselectedImage:[UIImage imageNamed:@"friends]];
+     [tabCamera setFinishedSelectedImage:[UIImage imageNamed:@"camer"] withFinishedUnselectedImage:[UIImage imageNamed:@"camera"]];
+     */
 }
 
 @end

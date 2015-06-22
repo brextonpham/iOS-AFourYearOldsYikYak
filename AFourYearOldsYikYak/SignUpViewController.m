@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
 }
 
 - (IBAction)signup:(id)sender {
@@ -56,4 +57,5 @@
 - (IBAction)dismissButton:(id)sender {
     [self.navigationController popViewControllerAnimated:YES]; //displaying login screen 
 }
+
 @end

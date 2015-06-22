@@ -14,5 +14,6 @@
 @property (nonatomic, strong) NSArray *allUsers;
 @property (nonatomic, strong) PFObject *selectedMessage;
 @property (nonatomic, strong) NSArray *messages;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end

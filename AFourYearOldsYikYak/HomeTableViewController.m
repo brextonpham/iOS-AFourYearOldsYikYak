@@ -8,6 +8,7 @@
 
 #import "HomeTableViewController.h"
 #import "MessageViewController.h"
+#import "MSCellAccessory.h"
 
 @interface HomeTableViewController ()
 
@@ -26,6 +27,10 @@
         //initial segue is to login screen at launch
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
+    
+    //refresh screen!
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(retrieveMessages) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -33,19 +38,7 @@
     
     [self.navigationController.navigationBar setHidden:NO]; //show navigation bar
     
-    /* Retrieving all messages */
-    PFQuery *query = [PFQuery queryWithClassName:@"Messages"];
-    [query whereKey:@"recipientIds" equalTo:[[PFUser currentUser] objectId]];
-    [query orderByDescending:@"createdAt"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (error) {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        } else {
-            self.messages = objects;
-            [self.tableView reloadData];
-            NSLog(@"Retrieved %d messages", [self.messages count]);
-        }
-    }];
+    [self retrieveMessages];
 }
 
 #pragma mark - Table view data source
@@ -70,6 +63,9 @@
     PFObject *message = [self.messages objectAtIndex:indexPath.row];
     cell.textLabel.text = [message objectForKey:@"fileContents"];
     
+    //cute little green arrow next to message
+    cell.accessoryView = [MSCellAccessory accessoryWithType:FLAT_DISCLOSURE_INDICATOR color:[UIColor colorWithRed:0.373 green:0.855 blue:0.71 alpha:1]];
+    
     return cell;
 }
 
@@ -88,5 +84,27 @@
         messageViewController.message = self.selectedMessage;
         
     }
+}
+
+#pragma mark - helper methods
+
+- (void)retrieveMessages {
+    /* Retrieving all messages */
+    PFQuery *query = [PFQuery queryWithClassName:@"Messages"];
+    [query whereKey:@"recipientIds" equalTo:[[PFUser currentUser] objectId]];
+    [query orderByDescending:@"createdAt"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        } else {
+            self.messages = objects;
+            [self.tableView reloadData];
+            NSLog(@"Retrieved %d messages", [self.messages count]);
+        }
+        
+        if ([self.refreshControl isRefreshing]) { //ENDS REFRESHING
+            [self.refreshControl endRefreshing];
+        }
+    }];
 }
 @end

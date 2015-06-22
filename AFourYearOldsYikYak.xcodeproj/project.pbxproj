@@ -30,6 +30,9 @@
 		D602E7741B37978C00392ED0 /* loginBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D602E7661B37978C00392ED0 /* loginBackground@2x.png */; };
 		D602E7771B379F5900392ED0 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D602E7761B379F5900392ED0 /* Images-2.xcassets */; };
 		D602E7791B37A9B400392ED0 /* yik yak image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D602E7781B37A9B400392ED0 /* yik yak image.jpg */; };
+		D602E77C1B37C39500392ED0 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D602E77A1B37C39500392ED0 /* TPKeyboardAvoidingScrollView.m */; };
+		D602E7821B37CE4F00392ED0 /* MSCellAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = D602E77F1B37CE4F00392ED0 /* MSCellAccessory.m */; };
+		D602E7831B37CE4F00392ED0 /* UIView+AccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D602E7811B37CE4F00392ED0 /* UIView+AccessViewController.m */; };
 		D65445C41B34E893004C05BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D65445C31B34E893004C05BE /* main.m */; };
 		D65445C71B34E893004C05BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D65445C61B34E893004C05BE /* AppDelegate.m */; };
 		D65445CD1B34E893004C05BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D65445CB1B34E893004C05BE /* Main.storyboard */; };
@@ -153,6 +156,12 @@
 		D602E7661B37978C00392ED0 /* loginBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "loginBackground@2x.png"; path = "Images/loginBackground@2x.png"; sourceTree = "<group>"; };
 		D602E7761B379F5900392ED0 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		D602E7781B37A9B400392ED0 /* yik yak image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "yik yak image.jpg"; path = "AFourYearOldsYikYak/yik yak image.jpg"; sourceTree = "<group>"; };
+		D602E77A1B37C39500392ED0 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		D602E77B1B37C39500392ED0 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		D602E77E1B37CE4F00392ED0 /* MSCellAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCellAccessory.h; sourceTree = "<group>"; };
+		D602E77F1B37CE4F00392ED0 /* MSCellAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCellAccessory.m; sourceTree = "<group>"; };
+		D602E7801B37CE4F00392ED0 /* UIView+AccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AccessViewController.h"; sourceTree = "<group>"; };
+		D602E7811B37CE4F00392ED0 /* UIView+AccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AccessViewController.m"; sourceTree = "<group>"; };
 		D65445BE1B34E893004C05BE /* AFourYearOldsYikYak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFourYearOldsYikYak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D65445C21B34E893004C05BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D65445C31B34E893004C05BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -334,6 +343,17 @@
 			name = fancyImages;
 			sourceTree = "<group>";
 		};
+		D602E77D1B37CE4F00392ED0 /* MSCellAccessory */ = {
+			isa = PBXGroup;
+			children = (
+				D602E77E1B37CE4F00392ED0 /* MSCellAccessory.h */,
+				D602E77F1B37CE4F00392ED0 /* MSCellAccessory.m */,
+				D602E7801B37CE4F00392ED0 /* UIView+AccessViewController.h */,
+				D602E7811B37CE4F00392ED0 /* UIView+AccessViewController.m */,
+			);
+			path = MSCellAccessory;
+			sourceTree = "<group>";
+		};
 		D65445B51B34E893004C05BE = {
 			isa = PBXGroup;
 			children = (
@@ -360,6 +380,9 @@
 		D65445C01B34E893004C05BE /* AFourYearOldsYikYak */ = {
 			isa = PBXGroup;
 			children = (
+				D602E77D1B37CE4F00392ED0 /* MSCellAccessory */,
+				D602E77A1B37C39500392ED0 /* TPKeyboardAvoidingScrollView.m */,
+				D602E77B1B37C39500392ED0 /* TPKeyboardAvoidingScrollView.h */,
 				D65445C51B34E893004C05BE /* AppDelegate.h */,
 				D65445C61B34E893004C05BE /* AppDelegate.m */,
 				D65445CB1B34E893004C05BE /* Main.storyboard */,
@@ -672,12 +695,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D602E7821B37CE4F00392ED0 /* MSCellAccessory.m in Sources */,
 				D6AEE7B31B35160300713220 /* MoreTableViewController.m in Sources */,
 				D654464E1B34F2A6004C05BE /* HomeTableViewController.m in Sources */,
 				D6AEE7B91B35ED4000713220 /* YakViewController.m in Sources */,
 				D6FCBA331B35037000E0E4A4 /* SignUpViewController.m in Sources */,
 				D65445C71B34E893004C05BE /* AppDelegate.m in Sources */,
 				D602E73C1B366BB300392ED0 /* MessageViewController.m in Sources */,
+				D602E7831B37CE4F00392ED0 /* UIView+AccessViewController.m in Sources */,
+				D602E77C1B37C39500392ED0 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				D65445C41B34E893004C05BE /* main.m in Sources */,
 				D6FCBA301B3500F000E0E4A4 /* LoginViewController.m in Sources */,
 			);
