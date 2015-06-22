@@ -9,6 +9,7 @@
 #import "HomeTableViewController.h"
 #import "MessageViewController.h"
 #import "MSCellAccessory.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface HomeTableViewController ()
 
@@ -16,8 +17,13 @@
 
 @implementation HomeTableViewController
 
+CLLocationManager *locationManager;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //initialize locationManager
+    locationManager = [[CLLocationManager alloc] init];
     
     //check to see if user is logged in already
     PFUser *currentUser = [PFUser currentUser];
@@ -47,7 +53,15 @@
         //initial segue is to login screen at launch
         [self retrieveMessages];
     }
-
+    
+    //retrieve location of iphone
+    locationManager.distanceFilter = kCLDistanceFilterNone; // whenever we move
+    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // 100 m
+    [locationManager startUpdatingLocation];
+    [locationManager requestAlwaysAuthorization];
+    float Lat = locationManager.location.coordinate.latitude;
+    float Long = locationManager.location.coordinate.longitude;
+    NSLog(@"Lat : %f  Long : %f",Lat,Long);
     
     
 }
@@ -123,4 +137,5 @@
         }];
     }
 }
+
 @end
