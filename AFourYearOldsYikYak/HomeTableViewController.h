@@ -12,7 +12,7 @@
 @interface HomeTableViewController : UITableViewController
 
 @property (nonatomic, strong) NSArray *allUsers;
-
+@property (nonatomic, strong) PFObject *selectedMessage;
 @property (nonatomic, strong) NSArray *messages;
 
 @end

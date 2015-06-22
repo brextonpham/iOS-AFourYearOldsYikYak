@@ -407,7 +407,7 @@
             </objects>
             <point key="canvasLocation" x="304" y="1427"/>
         </scene>
-        <!--Message View Controller-->
+        <!--Details-->
         <scene sceneID="Nsx-1N-5Pe">
             <objects>
                 <viewController id="4vM-TO-2IW" customClass="MessageViewController" sceneMemberID="viewController">
@@ -434,7 +434,9 @@
                             <constraint firstItem="MoP-np-2Pi" firstAttribute="leading" secondItem="hri-cn-J9F" secondAttribute="leading" id="wfX-hV-dtn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="pxt-RP-bKq"/>
+                    <navigationItem key="navigationItem" title="Details" id="pxt-RP-bKq">
+                        <barButtonItem key="rightBarButtonItem" image="sample-518-filter.png" id="F6t-dx-1j7"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="yakLabel" destination="MoP-np-2Pi" id="80Y-iJ-pGW"/>
                     </connections>
@@ -467,6 +469,7 @@
         <image name="sample-302-swords.png" width="30" height="25"/>
         <image name="sample-401-globe.png" width="28" height="28"/>
         <image name="sample-504-doghouse.png" width="28" height="28"/>
+        <image name="sample-518-filter.png" width="28" height="28"/>
         <image name="sample-986-ghost.png" width="24" height="28"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

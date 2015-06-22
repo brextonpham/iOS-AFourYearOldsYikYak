@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface MessageViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *yakLabel;
+@property (weak, nonatomic) IBOutlet UILabel *yakLabel; //label displaying yak
+@property (nonatomic, strong) PFObject *message; //passing in yak data
 
 @end
