@@ -27,6 +27,7 @@
 		D602E77C1B37C39500392ED0 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D602E77A1B37C39500392ED0 /* TPKeyboardAvoidingScrollView.m */; };
 		D602E7821B37CE4F00392ED0 /* MSCellAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = D602E77F1B37CE4F00392ED0 /* MSCellAccessory.m */; };
 		D602E7831B37CE4F00392ED0 /* UIView+AccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D602E7811B37CE4F00392ED0 /* UIView+AccessViewController.m */; };
+		D62D4B561B38B33E00521607 /* RWBasicCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D62D4B551B38B33E00521607 /* RWBasicCellTableViewCell.m */; };
 		D65445C41B34E893004C05BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D65445C31B34E893004C05BE /* main.m */; };
 		D65445C71B34E893004C05BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D65445C61B34E893004C05BE /* AppDelegate.m */; };
 		D65445CD1B34E893004C05BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D65445CB1B34E893004C05BE /* Main.storyboard */; };
@@ -156,6 +157,8 @@
 		D602E77F1B37CE4F00392ED0 /* MSCellAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCellAccessory.m; sourceTree = "<group>"; };
 		D602E7801B37CE4F00392ED0 /* UIView+AccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AccessViewController.h"; sourceTree = "<group>"; };
 		D602E7811B37CE4F00392ED0 /* UIView+AccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AccessViewController.m"; sourceTree = "<group>"; };
+		D62D4B541B38B33E00521607 /* RWBasicCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWBasicCellTableViewCell.h; path = ../RWBasicCellTableViewCell.h; sourceTree = "<group>"; };
+		D62D4B551B38B33E00521607 /* RWBasicCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RWBasicCellTableViewCell.m; path = ../RWBasicCellTableViewCell.m; sourceTree = "<group>"; };
 		D65445BE1B34E893004C05BE /* AFourYearOldsYikYak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFourYearOldsYikYak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D65445C21B34E893004C05BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D65445C31B34E893004C05BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -367,6 +370,8 @@
 		D65445C01B34E893004C05BE /* AFourYearOldsYikYak */ = {
 			isa = PBXGroup;
 			children = (
+				D62D4B541B38B33E00521607 /* RWBasicCellTableViewCell.h */,
+				D62D4B551B38B33E00521607 /* RWBasicCellTableViewCell.m */,
 				D602E77D1B37CE4F00392ED0 /* MSCellAccessory */,
 				D602E77A1B37C39500392ED0 /* TPKeyboardAvoidingScrollView.m */,
 				D602E77B1B37C39500392ED0 /* TPKeyboardAvoidingScrollView.h */,
@@ -706,6 +711,7 @@
 				D602E77C1B37C39500392ED0 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				D65445C41B34E893004C05BE /* main.m in Sources */,
 				D6FCBA301B3500F000E0E4A4 /* LoginViewController.m in Sources */,
+				D62D4B561B38B33E00521607 /* RWBasicCellTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

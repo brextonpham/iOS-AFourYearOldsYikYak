@@ -10,12 +10,18 @@
 #import "MessageViewController.h"
 #import "MSCellAccessory.h"
 #import <CoreLocation/CoreLocation.h>
+#import "RWBasicCellTableViewCell.h"
+static NSString *const RWBasicCellIdentifier = @"RWBasicCell";
 
 @interface HomeTableViewController ()
 
 @end
 
 @implementation HomeTableViewController
+
+#define FONT_SIZE 14.0f
+#define CELL_CONTENT_WIDTH 320.f
+#define CELL_CONTENT_MARGIN 10.0f
 
 CLLocationManager *locationManager;
 
@@ -79,19 +85,69 @@ CLLocationManager *locationManager;
 }
 
 
+//the beginning
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    /*
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     //displaying message at row
     PFObject *message = [self.messages objectAtIndex:indexPath.row];
     cell.textLabel.text = [message objectForKey:@"fileContents"];
+    NSString *text = [message objectForKey:@"fileContents"];
     
     //cute little green arrow next to message
     cell.accessoryView = [MSCellAccessory accessoryWithType:FLAT_DISCLOSURE_INDICATOR color:[UIColor colorWithRed:0.373 green:0.855 blue:0.71 alpha:1]];
     
     return cell;
+    */
+    return [self basicCellAtIndexPath:indexPath];
+}
+
+- (RWBasicCellTableViewCell *)basicCellAtIndexPath:(NSIndexPath *)indexPath {
+    RWBasicCellTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:RWBasicCellIdentifier forIndexPath:indexPath];
+    [self configureBasicCell:cell atIndexPath:indexPath];
+    return cell;
+}
+
+- (void)configureBasicCell:(RWBasicCellTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    PFObject *message = [self.messages objectAtIndex:indexPath.row];
+    NSString *text = [message objectForKey:@"fileContents"];
+    [self setSubtitleForCell:cell item:text];
+}
+
+- (void)setSubtitleForCell:(RWBasicCellTableViewCell *)cell item:(NSString *)item {
+    NSString *subtitle = item;
+    
+    if (subtitle.length > 200) {
+        subtitle = [NSString stringWithFormat:@"%@...", [subtitle substringToIndex:200]];
+    }
+    
+    [cell.subtitleLabel setText:subtitle];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [self heightForBasicCellAtIndexPath:indexPath];
+}
+
+- (CGFloat)heightForBasicCellAtIndexPath:(NSIndexPath *)indexPath {
+    static RWBasicCellTableViewCell *sizingCell = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sizingCell = [self.tableView dequeueReusableCellWithIdentifier:RWBasicCellIdentifier];
+    });
+    
+    [self configureBasicCell:sizingCell atIndexPath:indexPath];
+    return [self calculateHeightForConfiguredSizingCell:sizingCell];
+}
+
+- (CGFloat)calculateHeightForConfiguredSizingCell:(UITableViewCell *)sizingCell {
+    [sizingCell setNeedsLayout];
+    [sizingCell layoutIfNeeded];
+    
+    CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    return size.height + 1.0f; //Add 1.0f for the cell separator height
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -137,5 +193,6 @@ CLLocationManager *locationManager;
         }];
     }
 }
+
 
 @end
