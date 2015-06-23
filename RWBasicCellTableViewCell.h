@@ -10,7 +10,6 @@
 
 @interface RWBasicCellTableViewCell : UITableViewCell
 
-@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
-@property (nonatomic, weak) IBOutlet UILabel *subtitleLabel;
+@property (nonatomic, weak) IBOutlet UILabel *postLabel;
 
 @end

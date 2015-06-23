@@ -134,32 +134,22 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Udv-F5-zjt" id="xLJ-SK-Bt7">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="kea-jW-LFu">
-                                            <rect key="frame" x="20" y="20.5" width="280" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" misplaced="YES" text="Subtitle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="fVq-EL-hCh">
-                                            <rect key="frame" x="20" y="36" width="280" height="21.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Post" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="fVq-EL-hCh">
+                                            <rect key="frame" x="20" y="30" width="280" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="fVq-EL-hCh" secondAttribute="trailing" constant="20" id="57Q-ap-jj8"/>
-                                        <constraint firstItem="fVq-EL-hCh" firstAttribute="top" secondItem="kea-jW-LFu" secondAttribute="bottom" id="9ec-MC-zYh"/>
-                                        <constraint firstAttribute="bottom" secondItem="fVq-EL-hCh" secondAttribute="bottom" constant="20" id="O2v-2Z-I4L"/>
-                                        <constraint firstItem="fVq-EL-hCh" firstAttribute="leading" secondItem="xLJ-SK-Bt7" secondAttribute="leading" constant="20" id="RZv-K3-uR5"/>
-                                        <constraint firstItem="kea-jW-LFu" firstAttribute="leading" secondItem="xLJ-SK-Bt7" secondAttribute="leading" constant="20" id="lK0-ms-rh6"/>
-                                        <constraint firstItem="kea-jW-LFu" firstAttribute="top" secondItem="xLJ-SK-Bt7" secondAttribute="top" constant="20" id="qVp-9s-fyT"/>
-                                        <constraint firstAttribute="trailing" secondItem="kea-jW-LFu" secondAttribute="trailing" constant="20" id="wy7-vh-LdW"/>
+                                        <constraint firstItem="fVq-EL-hCh" firstAttribute="top" secondItem="xLJ-SK-Bt7" secondAttribute="top" constant="30" id="BCm-WP-zu8"/>
+                                        <constraint firstItem="fVq-EL-hCh" firstAttribute="leading" secondItem="xLJ-SK-Bt7" secondAttribute="leading" constant="20" id="Jno-F0-3JI"/>
+                                        <constraint firstAttribute="trailing" secondItem="fVq-EL-hCh" secondAttribute="trailing" constant="20" id="PFA-5s-aGa"/>
+                                        <constraint firstAttribute="bottom" secondItem="fVq-EL-hCh" secondAttribute="bottom" constant="31" id="zHR-QR-72g"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="subtitleLabel" destination="fVq-EL-hCh" id="9aX-Qa-ocb"/>
-                                    <outlet property="titleLabel" destination="kea-jW-LFu" id="2UG-mK-zeu"/>
+                                    <outlet property="postLabel" destination="fVq-EL-hCh" id="7bH-05-ITZ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
