@@ -118,15 +118,10 @@ CLLocationManager *locationManager;
     }
 }
 
-
-
-
-
-
-
+//perform background fetch
 - (void)fetchNewDataWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-    PFQuery *query = [PFQuery queryWithClassName:@"Messages"];
-    int oldMessages = [self retrieveExistingMessageCount];
+    PFQuery *query = [PFQuery queryWithClassName:@"Messages"]; //query messages from parse
+    int oldMessages = [self retrieveExistingMessageCount]; //obtain existing messages
     if ([[PFUser currentUser] objectId] == nil) {
         NSLog(@"No objectID");
     } else {
@@ -139,8 +134,6 @@ CLLocationManager *locationManager;
             } else {
                 [self.tableView reloadData];
                 newMessageCount = (int)[objects count];
-                NSLog(@"New Retrieved %d messages", newMessageCount);
-                NSLog(@"Existing Retrieved %d messages", oldMessages);
             }
             
             if ([self.refreshControl isRefreshing]) { //ENDS REFRESHING
@@ -149,15 +142,20 @@ CLLocationManager *locationManager;
         }];
     }
     
+    //compare current and existing messages
     if (newMessageCount == oldMessages) {
         completionHandler(UIBackgroundFetchResultNoData);
         NSLog(@"No new data found.");
     } else if (newMessageCount > oldMessages){
         [self retrieveMessages];
-
         completionHandler(UIBackgroundFetchResultNewData);
-
         NSLog(@"New data was fetched");
+        
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"YES!" message:@"you're a rockstar" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+        
+        
         [self.tableView reloadData];
     }
 }
@@ -182,10 +180,8 @@ CLLocationManager *locationManager;
                     self.messages= nil;
                 }
                 self.messages = [[NSArray alloc] initWithArray:objects];
-                //existingMessageCount = [self.messages count];
                 [self.tableView reloadData];
-                //NSLog(@"Retrieved %d messages", existingMessageCount);
-                [self savingExistingMessageCount];
+                [self savingExistingMessageCount]; //save message count
             }
             
             if ([self.refreshControl isRefreshing]) { //ENDS REFRESHING
@@ -253,6 +249,7 @@ CLLocationManager *locationManager;
     return size.height + 1.0f; //Add 1.0f for the cell separator height
 }
 
+//saves existing message count in new class in parse (existingMessageCount)
 - (void)savingExistingMessageCount {
     NSData *fileData;
     NSString *fileName;
@@ -269,7 +266,6 @@ CLLocationManager *locationManager;
     PFObject *file = [PFFile fileWithName:fileName data:fileData];
     
     int size = [self.messages count];
-    NSLog(@"there are %d objects in the array", size);
     
     [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (error) { //Alerts if yak doesn't save properly in Parse
@@ -294,6 +290,7 @@ CLLocationManager *locationManager;
     }];
 }
 
+//retrieves existing messages
 - (int)retrieveExistingMessageCount {
     PFQuery *query = [PFQuery queryWithClassName:@"existingMessages"];
     if ([[PFUser currentUser] objectId] == nil) {
@@ -306,7 +303,6 @@ CLLocationManager *locationManager;
             } else {
                 PFObject *firstOne = [objects objectAtIndex:0];
                 self.existingMessageCount = firstOne[@"existingMessageCount"];
-                NSLog(@"%@ firstOne", self.existingMessageCount);
             }
         }];
     }

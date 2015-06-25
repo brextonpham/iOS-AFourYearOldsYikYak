@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AFourYearOldsYikYak/HomeTableViewController.m"
-            timestampString = "456893548.260441"
+            timestampString = "456896913.42593"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
             landmarkName = "-setPostForCell:item:"
             landmarkType = "5">
          </BreakpointContent>
@@ -73,8 +73,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
             endingLineNumber = "22"
-            landmarkName = "completionHandler"
-            landmarkType = "19">
+            landmarkName = "-fetchNewDataWithCompletionHandler:"
+            landmarkType = "4">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -84,11 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AFourYearOldsYikYak/HomeTableViewController.m"
-            timestampString = "456893548.260441"
+            timestampString = "456896913.42593"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "-retrieveMessages"
             landmarkType = "5">
          </BreakpointContent>
@@ -100,11 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AFourYearOldsYikYak/HomeTableViewController.m"
-            timestampString = "456893548.260441"
+            timestampString = "456896913.42593"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "-retrieveMessages"
             landmarkType = "5">
          </BreakpointContent>

@@ -15,8 +15,6 @@
 @property (nonatomic, strong) PFObject *selectedMessage;
 @property (nonatomic, strong) NSArray *messages;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
-@property (nonatomic, strong) NSArray *arrMessageData;
-@property (nonatomic, strong) NSString *dataFilePath;
 @property (nonatomic, strong) NSNumber *existingMessageCount;
 
 

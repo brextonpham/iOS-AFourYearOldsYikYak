@@ -33,16 +33,12 @@
     
     NSDate *fetchStart = [NSDate date];
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main"
-                                                         bundle: nil];
-    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     HomeTableViewController *homeTableViewController = [storyboard instantiateViewControllerWithIdentifier:@"homeScreen"];
-    
     [homeTableViewController fetchNewDataWithCompletionHandler:^(UIBackgroundFetchResult result) {
         completionHandler(result);
-        
         NSDate *fetchEnd = [NSDate date];
-        NSTimeInterval timeElapsed = [fetchEnd timeIntervalSinceDate:fetchStart];
+        NSTimeInterval timeElapsed = [fetchEnd timeIntervalSinceDate:fetchStart]; //time it takes to perform background fetch
         NSLog(@"Background Fetch Duration : %F seconds", timeElapsed);
     }];
     
