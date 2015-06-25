@@ -14,6 +14,8 @@
 
 @implementation YakViewController
 
+int oldMessageCount;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.allUsersObjectIds = [[NSMutableArray alloc] init]; //initializing mutable array to add objectIds
@@ -84,6 +86,8 @@
             [message setObject:self.allUsersObjectIds forKey:@"recipientIds"];
             [message setObject:[[PFUser currentUser] objectId] forKey:@"senderId"];
             [message setObject:[[PFUser currentUser] username] forKey:@"senderName"];
+            [message setObject:[NSNumber numberWithInteger:[self calculateOldMessageCount]] forKey:@"oldMessageCount"];
+            [message setObject:[NSNumber numberWithInteger:[self calculateOldMessageCount] + 1] forKey:@"currentMessageCount"];
             [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (error) {
                     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"An error occurred!" message:@"Please try sending your message again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -95,5 +99,19 @@
         }
     }];
 }
+        
+- (int)calculateOldMessageCount {
+    
+    /* Retrieving all messages */
+    PFQuery *query = [PFQuery queryWithClassName:@"Messages"];
+    NSLog(@"%@",[[PFUser currentUser] objectId]);
+    [query whereKey:@"recipientIds" equalTo:[[PFUser currentUser] objectId]];
+    [query orderByDescending:@"createdAt"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            oldMessageCount = (int)[objects count];
+        }];
+    return oldMessageCount;
+}
+
 
 @end

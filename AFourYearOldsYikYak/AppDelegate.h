@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HomeTableViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

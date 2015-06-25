@@ -13,6 +13,7 @@
 #import "RWBasicCellTableViewCell.h"
 
 static NSString *const RWBasicCellIdentifier = @"RWBasicCell";
+NSInteger *newMessageCount;
 
 @interface HomeTableViewController ()
 
@@ -29,6 +30,10 @@ CLLocationManager *locationManager;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //Make self the delegate and datasource of the tableview
+    [self.tableView setDelegate:self];
+    [self.tableView setDataSource:self];
+
     //initialize locationManager
     locationManager = [[CLLocationManager alloc] init];
     
@@ -46,6 +51,10 @@ CLLocationManager *locationManager;
     //refresh screen!
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(retrieveMessages) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:self.refreshControl];
+    
+    [self.tableView reloadData];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -69,8 +78,7 @@ CLLocationManager *locationManager;
     float Lat = locationManager.location.coordinate.latitude;
     float Long = locationManager.location.coordinate.longitude;
     NSLog(@"Lat : %f  Long : %f",Lat,Long);
-    
-    
+
 }
 
 #pragma mark - Table view data source
@@ -110,6 +118,51 @@ CLLocationManager *locationManager;
     }
 }
 
+
+
+
+
+
+
+- (void)fetchNewDataWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    PFQuery *query = [PFQuery queryWithClassName:@"Messages"];
+    int oldMessages = [self retrieveExistingMessageCount];
+    if ([[PFUser currentUser] objectId] == nil) {
+        NSLog(@"No objectID");
+    } else {
+        NSLog(@"%@",[[PFUser currentUser] objectId]);
+        [query whereKey:@"recipientIds" equalTo:[[PFUser currentUser] objectId]];
+        [query orderByDescending:@"createdAt"];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (error) {
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            } else {
+                [self.tableView reloadData];
+                newMessageCount = (int)[objects count];
+                NSLog(@"New Retrieved %d messages", newMessageCount);
+                NSLog(@"Existing Retrieved %d messages", oldMessages);
+            }
+            
+            if ([self.refreshControl isRefreshing]) { //ENDS REFRESHING
+                [self.refreshControl endRefreshing];
+            }
+        }];
+    }
+    
+    if (newMessageCount == oldMessages) {
+        completionHandler(UIBackgroundFetchResultNoData);
+        NSLog(@"No new data found.");
+    } else if (newMessageCount > oldMessages){
+        [self retrieveMessages];
+
+        completionHandler(UIBackgroundFetchResultNewData);
+
+        NSLog(@"New data was fetched");
+        [self.tableView reloadData];
+    }
+}
+
+
 #pragma mark - helper methods
 
 - (void)retrieveMessages {
@@ -125,15 +178,21 @@ CLLocationManager *locationManager;
             if (error) {
                 NSLog(@"Error: %@ %@", error, [error userInfo]);
             } else {
-                self.messages = objects;
+                if (self.messages != nil) {
+                    self.messages= nil;
+                }
+                self.messages = [[NSArray alloc] initWithArray:objects];
+                //existingMessageCount = [self.messages count];
                 [self.tableView reloadData];
-                NSLog(@"Retrieved %d messages", [self.messages count]);
+                //NSLog(@"Retrieved %d messages", existingMessageCount);
+                [self savingExistingMessageCount];
             }
-        
+            
             if ([self.refreshControl isRefreshing]) { //ENDS REFRESHING
             [self.refreshControl endRefreshing];
             }
         }];
+
     }
 }
 
@@ -194,5 +253,64 @@ CLLocationManager *locationManager;
     return size.height + 1.0f; //Add 1.0f for the cell separator height
 }
 
+- (void)savingExistingMessageCount {
+    NSData *fileData;
+    NSString *fileName;
+    NSString *fileType;
+    NSString *yak = @"what";
+    
+    //obtain data if yak actually exists
+    if ([yak length] != 0) {
+        fileData = [yak dataUsingEncoding:NSUTF8StringEncoding];
+        fileName = @"yak";
+        fileType = @"string";
+    }
+    
+    PFObject *file = [PFFile fileWithName:fileName data:fileData];
+    
+    int size = [self.messages count];
+    NSLog(@"there are %d objects in the array", size);
+    
+    [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error) { //Alerts if yak doesn't save properly in Parse
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"An error occurred!" message:@"Please try sending your message again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+        } else {
+            PFObject *message = [PFObject objectWithClassName:@"existingMessages"];
+            
+            [message setObject:file forKey:@"file"]; //Creating classes to save message to in parse
+            [message setObject:yak forKey:@"fileContents"];
+            [message setObject:fileType forKey:@"fileType"];
+            [message setObject:[NSNumber numberWithInteger:size] forKey:@"existingMessageCount"];
+            [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (error) {
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"An error occurred!" message:@"Please try sending your message again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                    [alertView show];
+                } else {
+                    //IT WORKED.
+                }
+            }];
+        }
+    }];
+}
+
+- (int)retrieveExistingMessageCount {
+    PFQuery *query = [PFQuery queryWithClassName:@"existingMessages"];
+    if ([[PFUser currentUser] objectId] == nil) {
+        NSLog(@"No objectID");
+    } else {
+        [query orderByDescending:@"createdAt"];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (error) {
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            } else {
+                PFObject *firstOne = [objects objectAtIndex:0];
+                self.existingMessageCount = firstOne[@"existingMessageCount"];
+                NSLog(@"%@ firstOne", self.existingMessageCount);
+            }
+        }];
+    }
+    return self.existingMessageCount;
+}
 
 @end

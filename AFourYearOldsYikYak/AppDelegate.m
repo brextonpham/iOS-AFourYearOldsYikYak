@@ -22,9 +22,30 @@
     [Parse setApplicationId:@"OVKp5NmMjIXJd6XqOSIwxbZzktT2GfikVfoz7IuL"
                   clientKey:@"t0W3Llo02jwLVjSoH6nWX1mlpC2r9Ii9gKVZ66iJ"];
     
+    [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+    
     [self customizeUserInterface];
     
     return YES;
+}
+
+-(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
+    
+    NSDate *fetchStart = [NSDate date];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main"
+                                                         bundle: nil];
+    
+    HomeTableViewController *homeTableViewController = [storyboard instantiateViewControllerWithIdentifier:@"homeScreen"];
+    
+    [homeTableViewController fetchNewDataWithCompletionHandler:^(UIBackgroundFetchResult result) {
+        completionHandler(result);
+        
+        NSDate *fetchEnd = [NSDate date];
+        NSTimeInterval timeElapsed = [fetchEnd timeIntervalSinceDate:fetchStart];
+        NSLog(@"Background Fetch Duration : %F seconds", timeElapsed);
+    }];
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

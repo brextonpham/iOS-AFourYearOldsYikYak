@@ -9,12 +9,16 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
+
+#import "HomeTableViewController.h"
+
 @interface YakViewController : UIViewController
 
 @property (nonatomic, strong) NSArray *allUsers; //all users
 @property (weak, nonatomic) IBOutlet UITextView *messageField; //text box used to yak in
 @property (nonatomic, strong) PFUser *currentUser; //current user
 @property (nonatomic, strong) NSMutableArray *allUsersObjectIds; //objectIds from all users
+
 
 - (IBAction)cancelButton:(id)sender;
 - (IBAction)sendButton:(id)sender;

@@ -116,7 +116,7 @@
         <!--Yik Yak-->
         <scene sceneID="JFZ-ql-cGt">
             <objects>
-                <tableViewController id="NSd-El-MtB" customClass="HomeTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="homeScreen" id="NSd-El-MtB" customClass="HomeTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="AVm-Ea-hAx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,7 +172,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="feV-c3-6yY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="836" y="-450"/>
+            <point key="canvasLocation" x="836" y="-449"/>
         </scene>
         <!--Send a Yak-->
         <scene sceneID="BJN-Pa-XBm">

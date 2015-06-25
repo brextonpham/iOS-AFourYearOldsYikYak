@@ -371,9 +371,9 @@
 		D65445C01B34E893004C05BE /* AFourYearOldsYikYak */ = {
 			isa = PBXGroup;
 			children = (
+				D602E77D1B37CE4F00392ED0 /* MSCellAccessory */,
 				D62D4B541B38B33E00521607 /* RWBasicCellTableViewCell.h */,
 				D62D4B551B38B33E00521607 /* RWBasicCellTableViewCell.m */,
-				D602E77D1B37CE4F00392ED0 /* MSCellAccessory */,
 				D602E77A1B37C39500392ED0 /* TPKeyboardAvoidingScrollView.m */,
 				D602E77B1B37C39500392ED0 /* TPKeyboardAvoidingScrollView.h */,
 				D65445C51B34E893004C05BE /* AppDelegate.h */,
